@@ -112,7 +112,7 @@ public abstract class Page {
 
   public void waitUntilIsLoaded(WebElement element) {
     try {
-      new WebDriverWait(driver, 7).until(ExpectedConditions.visibilityOf(element));
+      new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(element));
     } catch (Exception e) {
       // Log.info("---------------------------------");
       // Log.info("element " + element + " can not be found by ExpectedConditions.visibilityOf(element)");
@@ -247,7 +247,7 @@ public abstract class Page {
     });
 
     return  el;
-  };
+  }
 
   // --------was added by Marina (05.03) -------------
   public WebElement findWebElementInListByText(List<WebElement> listWebElements, String text){

@@ -1,6 +1,6 @@
 package com.telran;
 
-import com.telran.pages.*;
+import com.telran.pages.Learning.*;
 import com.telran.util.PropertyLoader;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;

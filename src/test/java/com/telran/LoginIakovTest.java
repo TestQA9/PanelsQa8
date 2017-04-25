@@ -1,6 +1,6 @@
 package com.telran;
 
-import com.telran.pages.CompaniesIakovPage;
+import com.telran.pages.Learning.CompaniesIakovPage;
 import com.telran.pages.LoginIakovPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
