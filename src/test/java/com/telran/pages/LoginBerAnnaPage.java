@@ -19,6 +19,9 @@ public class LoginBerAnnaPage extends Page {
     @FindBy(id = "pass")
     WebElement passwordField;
 
+    @FindBy(id = "button")
+    WebElement loginButton;
+
     public LoginBerAnnaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
@@ -31,5 +34,10 @@ public class LoginBerAnnaPage extends Page {
 
     public void fillPasswordField(String logintext) {
         setElementText(passwordField, logintext);
+    }
+
+    public void pressLoginButton() {
+        Log.info("Clicking to login button ");
+        clickElement(loginButton);
     }
 }
