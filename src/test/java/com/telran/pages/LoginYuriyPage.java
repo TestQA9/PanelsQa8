@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Sample page
  */
-public class LoginIako1vPage extends Page {
+public class LoginYuriyPage extends Page {
     private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
 
     @FindBy(id = "login")
@@ -19,18 +19,39 @@ public class LoginIako1vPage extends Page {
     @FindBy(id = "pass")
     WebElement passwordField;
 
-    public LoginIako1vPage(WebDriver driver) {
+    @FindBy(id = "button")
+    WebElement submitButton;
+
+    public LoginYuriyPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
 
     }
 
-    public void fillLoginField(String text) {
+    //actions
+    public void fillUserName(String text) {
         setElementText(loginField, text);
     }
 
-    public void fillPasswordField(String logintext) {
-        setElementText(passwordField, logintext);
+    public void fillPassword(String text) {
+        setElementText(passwordField, text);
+    }
+
+    public void clickToLogin() {
+        clickElement(submitButton);
+    }
+
+    //waiting
+
+    public void waitLoginPageToLoad() {
+        waitUntilIsLoaded(submitButton);
+    }
+
+    //verifications
+
+    public boolean isOnLoginPage() { //checks if we are still on Login Page
+        return exists(submitButton);
     }
 
 }
+
