@@ -26,5 +26,4 @@ public void negativeLoginTest(){
     Assert.assertTrue(loginTonyPage.isOnLoginPage(),"Not on Login Page");
 }
 
-
 }

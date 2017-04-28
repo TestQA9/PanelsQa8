@@ -44,5 +44,4 @@ public class LoginTonyPage extends Page {
     public boolean isOnLoginPage(){
         return exists(butButton);
     }
-
 }
