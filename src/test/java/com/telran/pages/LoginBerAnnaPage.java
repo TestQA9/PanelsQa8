@@ -20,7 +20,7 @@ public class LoginBerAnnaPage extends Page {
     WebElement passwordField;
 
     @FindBy(id = "button")
-    WebElement loginButton;
+    WebElement submitButton;
 
     public LoginBerAnnaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
@@ -28,16 +28,26 @@ public class LoginBerAnnaPage extends Page {
 
     }
 
-    public void fillLoginField(String logintext) {
-        setElementText(loginField, logintext);
+    public void fillLoginField(String text) {
+        setElementText(loginField, text);
     }
 
-    public void fillPasswordField(String logintext) {
-        setElementText(passwordField, logintext);
+    public void fillPasswordField(String text) {
+        setElementText(passwordField, text);
     }
 
     public void pressLoginButton() {
-        Log.info("Clicking to login button ");
-        clickElement(loginButton);
+        clickElement(submitButton);
     }
+
+    //vaits
+    public void waitLoginPageToLoad() {
+        waitUntilIsLoaded(submitButton);
+    }
+
+    //verifications
+    public boolean isOnLoginPage() {
+        return exists(submitButton);
+    }
+
 }
