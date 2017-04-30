@@ -1,7 +1,7 @@
 package com.telran;
 
 import com.telran.pages.Learning.CompaniesIakovPage;
-import com.telran.pages.LoginIakovPage;
+import com.telran.pages.LoginKapelovichPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -9,12 +9,12 @@ import org.testng.annotations.Test;
 
 public class LoginIakovTest extends TestNgTestBase {
 
-    public LoginIakovPage loginIakovPage;
+    public LoginKapelovichPage loginIakovPage;
     public CompaniesIakovPage companiesIakovPage;
 
     @BeforeMethod
     public void initPageObjects() {
-        loginIakovPage = PageFactory.initElements(driver, LoginIakovPage.class);
+        loginIakovPage = PageFactory.initElements(driver, LoginKapelovichPage.class);
         companiesIakovPage = PageFactory.initElements(driver, CompaniesIakovPage.class);
     }
 

@@ -1,17 +1,17 @@
 package com.telran;
 
-import com.telran.pages.LoginIakovPage;
+import com.telran.pages.LoginKapelovichPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 
 public class LoginExampleTest extends TestNgTestBase {
 
-    public LoginIakovPage loginIakovPage;
+    public LoginKapelovichPage loginIakovPage;
 
 
     @BeforeMethod
     public void initPageObjects() {
-        loginIakovPage = PageFactory.initElements(driver, LoginIakovPage.class);
+        loginIakovPage = PageFactory.initElements(driver, LoginKapelovichPage.class);
 
     }
 
