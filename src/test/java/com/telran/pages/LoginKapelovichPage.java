@@ -1,13 +1,10 @@
 package com.telran.pages;
 
 import com.telran.LogLog4j;
-import com.telran.pages.Page;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 /**

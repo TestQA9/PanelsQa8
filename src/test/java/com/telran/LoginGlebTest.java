@@ -1,7 +1,7 @@
 package com.telran;
 
 import com.telran.pages.LoginGlebPage;
-import com.telran.pages.LoginIakovPage;
+import com.telran.pages.LoginGlebPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
