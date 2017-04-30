@@ -23,7 +23,6 @@ public class LoginKapelovichTest extends TestNgTestBase {
         loginKapelovichPage.fillLoginField("");
         loginKapelovichPage.fillPasswordField("");
         loginKapelovichPage.pressLoginButton();
-
         Assert.assertTrue(loginKapelovichPage.isOnLoginPage(), "We are not on login page");
     }
 
