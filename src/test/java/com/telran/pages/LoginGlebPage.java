@@ -24,6 +24,9 @@ public class LoginGlebPage extends Page {
   @FindBy(id = "button")
   WebElement loginButton;
 
+  @FindBy(id = "quit")
+  WebElement logoutButton;
+
 
   public LoginGlebPage(WebDriver driver) {
     super(driver);//наследуем от супер-класса
@@ -46,8 +49,12 @@ public class LoginGlebPage extends Page {
 waitUntilIsLoaded(loginButton);
   }
 
+  public void waitCompaniesPageToLoad(){waitUntilIsLoaded(logoutButton);}
+
   //verifications
   public boolean isOnLoginPage(){
     return exists(loginButton);
   }
+
+  public boolean isOnCompaniesPage(){return exists(logoutButton);}
 }

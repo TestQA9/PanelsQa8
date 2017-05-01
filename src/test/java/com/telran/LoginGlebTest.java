@@ -29,4 +29,15 @@ public void negativeLoginTest(){
     Assert.assertTrue(loginGlebPage.isOnLoginPage(), "We are not on login page");
 }
 
+    @Test
+    public void positiveLoginTest(){
+        driver.get("https://greengnome.github.io/panels/#/login");
+        loginGlebPage.waitLoginPageToLoad();
+        loginGlebPage.fillLoginField("admin");
+        loginGlebPage.fillPassField("12345");
+        loginGlebPage.pressLoginButton();
+        loginGlebPage.waitCompaniesPageToLoad();
+        Assert.assertTrue(loginGlebPage.isOnCompaniesPage(), "We are on login page");
+    }
+
 }
