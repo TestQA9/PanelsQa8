@@ -20,6 +20,13 @@ public class LoginTonyPage extends Page {
     @FindBy(id = "button")
     WebElement butButton;
 
+    @FindBy(id="menu")
+    WebElement menuButton;
+
+    @FindBy(tagName = "h2")
+    WebElement mainElement;
+
+
     public LoginTonyPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -43,5 +50,13 @@ public class LoginTonyPage extends Page {
 
     public boolean isOnLoginPage(){
         return exists(butButton);
+    }
+
+    public void waitMainPageIsLoad(){
+        waitUntilIsLoaded(mainElement);
+    }
+
+    public boolean isOnManePage(){
+        return exists(mainElement);
     }
 }

@@ -26,4 +26,14 @@ public void negativeLoginTest(){
     Assert.assertTrue(loginTonyPage.isOnLoginPage(),"Not on Login Page");
 }
 
+    @Test
+public void positiveLoginTest(){
+  driver.get("https://greengnome.github.io/panels");
+  loginTonyPage.waitLoginPageToLoad();
+  loginTonyPage.fillLoginField("admin");
+  loginTonyPage.fillPasswordField("12345");
+  loginTonyPage.clickButton();
+  loginTonyPage.waitMainPageIsLoad();
+  Assert.assertTrue(loginTonyPage.isOnManePage(), "Not on the Main Menu Page");
+}
 }
