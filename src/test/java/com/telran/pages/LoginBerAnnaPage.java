@@ -22,6 +22,9 @@ public class LoginBerAnnaPage extends Page {
     @FindBy(id = "button")
     WebElement submitButton;
 
+    @FindBy(tagName = "b")
+    WebElement panelsPage;
+
     public LoginBerAnnaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
@@ -45,9 +48,16 @@ public class LoginBerAnnaPage extends Page {
         waitUntilIsLoaded(submitButton);
     }
 
+    public void waitPanelsToLoad() {
+        waitUntilIsLoaded(panelsPage);
+    }
+
     //verifications
     public boolean isOnLoginPage() {
         return exists(submitButton);
     }
 
+    public boolean isOnPanelsPage() {
+        return exists(panelsPage);
+    }
 }
