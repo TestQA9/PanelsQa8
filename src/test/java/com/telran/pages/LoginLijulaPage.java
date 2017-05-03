@@ -22,6 +22,9 @@ public class LoginLijulaPage extends Page {
     @FindBy(id = "button")
     WebElement submitButton;
 
+    @FindBy(id = "menu")
+    WebElement companiesPage;
+
     public LoginLijulaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
@@ -46,8 +49,16 @@ public class LoginLijulaPage extends Page {
         waitUntilIsLoaded(submitButton);
     }
 
+    public void waitCompaniesPageToLoad() {
+        waitUntilIsLoaded(companiesPage);
+    }
+
     //verifications
     public boolean isOnLoginPage() {
         return exists(submitButton);
+    }
+
+    public boolean isOnCompaniesPage() {
+        return exists(companiesPage);
     }
 }
