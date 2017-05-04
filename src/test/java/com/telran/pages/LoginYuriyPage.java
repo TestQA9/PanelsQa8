@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Sample page
  */
-public class LoginLijulaPage extends Page {
+public class LoginYuriyPage extends Page {
     private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
 
     @FindBy(id = "login")
@@ -22,17 +22,14 @@ public class LoginLijulaPage extends Page {
     @FindBy(id = "button")
     WebElement submitButton;
 
-    @FindBy(id = "menu")
-    WebElement companiesPage;
-
-    public LoginLijulaPage(WebDriver driver) {
+    public LoginYuriyPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
 
     }
 
-    //ections
-    public void fillUsername(String text) {
+    //actions
+    public void fillUserName(String text) {
         setElementText(loginField, text);
     }
 
@@ -40,25 +37,21 @@ public class LoginLijulaPage extends Page {
         setElementText(passwordField, text);
     }
 
-    public void pressButton() {
+    public void clickToLogin() {
         clickElement(submitButton);
     }
 
-    //waits
+    //waiting
+
     public void waitLoginPageToLoad() {
         waitUntilIsLoaded(submitButton);
     }
 
-    public void waitCompaniesPageToLoad() {
-        waitUntilIsLoaded(companiesPage);
-    }
-
     //verifications
-    public boolean isOnLoginPage() {
+
+    public boolean isOnLoginPage() { //checks if we are still on Login Page
         return exists(submitButton);
     }
 
-    public boolean isOnCompaniesPage() {
-        return exists(companiesPage);
-    }
 }
+

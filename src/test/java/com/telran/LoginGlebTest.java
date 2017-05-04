@@ -1,7 +1,7 @@
 package com.telran;
 
 import com.telran.pages.LoginGlebPage;
-import com.telran.pages.LoginIakovPage;
+import com.telran.pages.LoginGlebPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -28,5 +28,16 @@ public void negativeLoginTest(){
         loginGlebPage.waitLoginPageToLoad();
     Assert.assertTrue(loginGlebPage.isOnLoginPage(), "We are not on login page");
 }
+
+    @Test
+    public void positiveLoginTest(){
+        driver.get("https://greengnome.github.io/panels/#/login");
+        loginGlebPage.waitLoginPageToLoad();
+        loginGlebPage.fillLoginField("admin");
+        loginGlebPage.fillPassField("12345");
+        loginGlebPage.pressLoginButton();
+        loginGlebPage.waitCompaniesPageToLoad();
+        Assert.assertTrue(loginGlebPage.isOnCompaniesPage(), "We are on login page");
+    }
 
 }

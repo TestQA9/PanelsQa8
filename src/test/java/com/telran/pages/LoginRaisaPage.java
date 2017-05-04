@@ -4,17 +4,25 @@ import com.telran.LogLog4j;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 /**
  * Sample page
  */
-public class LoginIakovPage extends Page {
-  private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
+public class LoginRaisaPage extends Page {
+    private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
 
+    @FindBy(id = "login")
+    WebElement loginField;
+
+    @FindBy(id = "pass")
+    WebElement passField;
+
+    @FindBy(id = "button")
+    WebElement loginButton;
+
+  /*
   @FindBy(how = How.TAG_NAME, using = "h1")
 
   @CacheLookup
@@ -43,14 +51,36 @@ public class LoginIakovPage extends Page {
 
   @FindBy(xpath = "//h3[Contains(Text(),'Please log in to continue')]") // ищет элемент по h3 - локатор и проверяет что на странице есть 'Please log in to continue'
           WebElement pleaseLogInheader;
+*/
 
+    //methods
+    public LoginRaisaPage(WebDriver driver) {
+        super(driver);//наследуем от супер-класса
+        PageFactory.initElements(driver, this);
+    }
 
-  public LoginIakovPage(WebDriver driver) {
-    super(driver);//наследуем от супер-класса
-    PageFactory.initElements(driver, this);
+    public void fillLoginField(String loginText) {
+        setElementText(loginField, loginText);
+    }
 
-  }
+    public void fillPasswordField(String passwordText) {
+        setElementText(passField, passwordText);
+    }
 
+    public void clickLoginButton() {
+        clickElement(loginButton);
+    }
+
+    public void waitLoginPageLoad() {
+        waitUntilIsLoaded(loginButton);
+    }
+
+    //verifications
+    public boolean isOnLoginPage() {
+        return exists(loginButton);
+    }
+
+/*
   //metods
   public void fillLoginField(String test) {
     Log.info("Filling login field with " + test);
@@ -96,4 +126,5 @@ public class LoginIakovPage extends Page {
   public void openloginpage() {
     driver.get("");
   }
+  */
 }

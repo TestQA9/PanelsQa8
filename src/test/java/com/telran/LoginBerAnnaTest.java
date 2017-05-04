@@ -29,4 +29,16 @@ public class LoginBerAnnaTest extends TestNgTestBase {
         Assert.assertTrue(loginBerAnnaPage.isOnLoginPage(), "We aren't on login page");
     }
 
+    @Test
+    public void positiveLoginTest() {
+        driver.get("https://greengnome.github.io/panels");
+        loginBerAnnaPage.waitLoginPageToLoad();
+        loginBerAnnaPage.fillLoginField("admin");
+        loginBerAnnaPage.fillPasswordField("12345");
+        loginBerAnnaPage.pressLoginButton();
+        loginBerAnnaPage.waitPanelsToLoad();
+
+        Assert.assertTrue(loginBerAnnaPage.isOnPanelsPage(), "We aren't on Panels page");
+
+    }
 }
