@@ -212,7 +212,7 @@ public abstract class Page {
     try {
       driver.findElement(by);
       return true;
-    } catch (org.openqa.selenium.NoSuchElementException e) {
+    } catch (NoSuchElementException e) {
       //  Log.info("----------ALERT-----------------");
       //  Log.info("element " + by + " can not be found by ExpectedConditions.visibilityOf(element)");
       //  Log.info("---------ALERT------------------");
