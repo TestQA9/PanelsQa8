@@ -20,20 +20,43 @@ public class ElenaPage extends Page {
     @FindBy(id = "pass")
     WebElement passField;
 
+
+    @FindBy(id = "button")
+    WebElement submitButton;
+
+
     public ElenaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
 
     }
 
+    //actions
+    public void fillUsername(String text) {
+        setElementText(loginField, text);
+    }
 
-    public void fillLoginField(String logintext) {
+    public void filLoginField(String logintext) {
         setElementText(loginField, logintext);
+    }
+
+    public void clickbutton() {
+        clickElement(submitButton);
     }
 
     public void filPasswordField(String logintext) {
         setElementText(passField, logintext);
     }
 
-}
+    //vaits
+    public void waitLoginPagetoload() {
+        waitUntilIsLoaded(submitButton);
+    }
 
+    //verifcations
+
+    public boolean isOnLoginPage() {
+        return exists(submitButton);
+    }
+
+}
