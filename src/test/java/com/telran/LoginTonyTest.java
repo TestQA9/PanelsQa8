@@ -15,7 +15,7 @@ public void initPageObjects() {
         loginTonyPage = PageFactory.initElements(driver, LoginTonyPage.class);
     }
 
-    @Test
+    @Test (groups = {"smoke"})
 public void negativeLoginTest(){
  driver.get("https://greengnome.github.io/panels");
     loginTonyPage.waitLoginPageToLoad();
@@ -26,7 +26,7 @@ public void negativeLoginTest(){
     Assert.assertTrue(loginTonyPage.isOnLoginPage(),"Not on Login Page");
 }
 
-    @Test
+    @Test (groups = {"regression"})
 public void positiveLoginTest(){
   driver.get("https://greengnome.github.io/panels");
   loginTonyPage.waitLoginPageToLoad();
@@ -36,4 +36,5 @@ public void positiveLoginTest(){
   loginTonyPage.waitMainPageIsLoad();
   Assert.assertTrue(loginTonyPage.isOnManePage(), "Not on the Main Menu Page");
 }
+
 }

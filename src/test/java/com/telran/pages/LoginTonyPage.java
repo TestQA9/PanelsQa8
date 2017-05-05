@@ -20,9 +20,6 @@ public class LoginTonyPage extends Page {
     @FindBy(id = "button")
     WebElement butButton;
 
-    @FindBy(id="menu")
-    WebElement menuButton;
-
     @FindBy(tagName = "h2")
     WebElement mainElement;
 
