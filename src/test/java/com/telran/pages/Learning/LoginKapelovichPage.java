@@ -5,9 +5,7 @@ import com.telran.pages.Page;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 /**
@@ -15,15 +13,12 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class LoginKapelovichPage extends Page {
   private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
-
+    @FindBy(xpath = ".//*[@id='button']")
+    public WebElement loginButton;
   @FindBy(xpath = ".//*[@id='login']")
   WebElement loginField;
-
   @FindBy(xpath=".//*[@id='pass']")
   WebElement passwordField;
-
-  @FindBy(xpath = ".//*[@id='button']")
-  public WebElement loginButton;
 
 
 
