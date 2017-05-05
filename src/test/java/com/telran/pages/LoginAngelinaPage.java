@@ -10,22 +10,22 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Sample page
  */
-public class ElenaPage extends Page {
+public class LoginAngelinaPage extends Page {
     private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
-
 
     @FindBy(id = "login")
     WebElement loginField;
 
     @FindBy(id = "pass")
-    WebElement passField;
-
+    WebElement passwordField;
 
     @FindBy(id = "button")
     WebElement submitButton;
 
+    @FindBy(id = "quit")
+    WebElement quitButton;
 
-    public ElenaPage(WebDriver driver) {
+    public LoginAngelinaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
 
@@ -36,27 +36,30 @@ public class ElenaPage extends Page {
         setElementText(loginField, text);
     }
 
-    public void filLoginField(String logintext) {
-        setElementText(loginField, logintext);
+    public void fillPassword(String text) {
+        setElementText(passwordField, text);
     }
 
-    public void clickbutton() {
+    public void clicktoLogin() {
         clickElement(submitButton);
     }
 
-    public void filPasswordField(String logintext) {
-        setElementText(passField, logintext);
-    }
+//waits
 
-    //vaits
     public void waitLoginPagetoload() {
         waitUntilIsLoaded(submitButton);
     }
 
-    //verifcations
+    public void waitHomePagetoload() {
+        waitUntilIsLoaded(quitButton);
+    }
 
+    //verifcations
     public boolean isOnLoginPage() {
         return exists(submitButton);
     }
 
+    public boolean isOnHomePage() {
+        return exists(quitButton);
+    }
 }

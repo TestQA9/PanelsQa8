@@ -27,4 +27,17 @@ public class LoginKapelovichTest extends TestNgTestBase {
         Assert.assertTrue(loginKapelovichPage.isOnLoginPage(), "We are not on login page");
     }
 
+    @Test
+    public void positiveLoginTest() {
+        driver.get("https://greengnome.github.io/panels");
+        loginKapelovichPage.waitForLoginPageIsLoaded();
+        loginKapelovichPage.fillLoginField("admin");
+        loginKapelovichPage.fillPasswordField("12345");
+        loginKapelovichPage.pressLoginButton();
+        loginKapelovichPage.waitForLoginPageIsLoaded();
+        Assert.assertTrue(loginKapelovichPage.isOnCompanyPage(), "We are on login page");
+    }
+
+
+
 }

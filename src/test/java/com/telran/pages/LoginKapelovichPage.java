@@ -12,17 +12,14 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class LoginKapelovichPage extends Page {
   private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
-
-  @FindBy(id = "login")
-  WebElement loginField;
-
-  @FindBy(id= "pass")
-  WebElement passwordField;
-
   @FindBy(id = "button")
   public WebElement loginButton;
-
-
+  @FindBy(xpath = ".//*[@id='quit']")
+  public WebElement ButtonQuit;
+  @FindBy(id = "login")
+  WebElement loginField;
+  @FindBy(id= "pass")
+  WebElement passwordField;
 
   public LoginKapelovichPage(WebDriver driver) {
     super(driver);//
@@ -46,9 +43,11 @@ public class LoginKapelovichPage extends Page {
     waitUntilIsLoaded(loginButton);
   }
 
+  public boolean isOnCompanyPage() {
+    return exists(ButtonQuit);
+  }
 
   public boolean isOnLoginPage (){
-
     return exists(loginButton);
   }
 }
