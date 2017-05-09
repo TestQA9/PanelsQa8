@@ -27,6 +27,7 @@ public class TestNgTestBase {
   public CompaniesPaulaPage companiesPaulaPage;
   public LoginAnnaPage loginPage;
   public CompaniesAnna companiesAnna;
+  protected WebDriver driver;
   public LoginIakovV2Page loginIakovV2Page;
   public LoginTonyPage loginTonyPage;
   protected WebDriver driver;
@@ -50,8 +51,6 @@ public class TestNgTestBase {
     companiesPaulaPage = PageFactory.initElements(driver, CompaniesPaulaPage.class);
     loginPage = PageFactory.initElements(driver, LoginAnnaPage.class);
     companiesAnna = PageFactory.initElements(driver, CompaniesAnna.class);
-    loginIakovV2Page = PageFactory.initElements(driver, LoginIakovV2Page.class);
-    loginTonyPage = PageFactory.initElements(driver, LoginTonyPage.class);
   }
 
   @AfterSuite(alwaysRun = true)
