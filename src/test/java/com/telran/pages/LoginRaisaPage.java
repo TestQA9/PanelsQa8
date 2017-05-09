@@ -22,6 +22,9 @@ public class LoginRaisaPage extends Page {
     @FindBy(id = "button")
     WebElement loginButton;
 
+    @FindBy(xpath = ".//div[@class='mdl-color--black mdl-color-text--yellow'][text()='PANELS']")
+    WebElement textPANELS;
+
   /*
   @FindBy(how = How.TAG_NAME, using = "h1")
 
@@ -60,24 +63,37 @@ public class LoginRaisaPage extends Page {
     }
 
     public void fillLoginField(String loginText) {
+        Log.info("Fill login field with " + loginText);
         setElementText(loginField, loginText);
     }
 
     public void fillPasswordField(String passwordText) {
+        Log.info("Fill password field with " + passwordText);
         setElementText(passField, passwordText);
     }
 
     public void clickLoginButton() {
+        Log.info("Click on login button");
         clickElement(loginButton);
     }
 
     public void waitLoginPageLoad() {
+        Log.info("Waiting for login page to load");
         waitUntilIsLoaded(loginButton);
+    }
+
+    public void waitPANELSpageLoad() {
+        Log.info("Waiting for Panels page to load");
+        waitUntilIsLoaded(textPANELS);
     }
 
     //verifications
     public boolean isOnLoginPage() {
         return exists(loginButton);
+    }
+
+    public boolean isOnPANELSpage() {
+        return (exists(textPANELS));
     }
 
 /*

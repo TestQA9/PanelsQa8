@@ -221,7 +221,7 @@
       </build>
     </profile>
     <profile>
-      <id>kapelovich</id>
+      <id>raisa</id>
       <build>
         <plugins>
           <plugin>
@@ -229,23 +229,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <suiteXmlFiles>
-                <suiteXmlFile>src/test/resources/testngKapelovichSmoke.xml</suiteXmlFile>
-              </suiteXmlFiles>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>iakov</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-              <suiteXmlFiles>
-                <suiteXmlFile>src/test/resources/testngIakovSmoke.xml</suiteXmlFile>
+                <suiteXmlFile>src/test/resources/testngRaisa.xml</suiteXmlFile>
               </suiteXmlFiles>
             </configuration>
           </plugin>
