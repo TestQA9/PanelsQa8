@@ -1,9 +1,7 @@
 package com.telran;
 
 import com.telran.pages.LoginKapelovichPage;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginKapelovichTest extends TestNgTestBase {
@@ -11,12 +9,12 @@ public class LoginKapelovichTest extends TestNgTestBase {
     public LoginKapelovichPage loginKapelovichPage;
 
 
-    @BeforeMethod
-    public void initPageObjects() {
-        loginKapelovichPage = PageFactory.initElements(driver, LoginKapelovichPage.class);
+    //   @BeforeMethod
+    //   public void initPageObjects() {
+    //       loginKapelovichPage = PageFactory.initElements(driver, LoginKapelovichPage.class);
 
-    }
-@Test
+    //    }
+    @Test(groups = {"smoke"})
     public void negativeLoginTest(){
         driver.get("https://greengnome.github.io/panels");
         loginKapelovichPage.waitForLoginPageIsLoaded();
@@ -27,7 +25,7 @@ public class LoginKapelovichTest extends TestNgTestBase {
         Assert.assertTrue(loginKapelovichPage.isOnLoginPage(), "We are not on login page");
     }
 
-    @Test
+    @Test(groups = {"inprogress"})
     public void positiveLoginTest() {
         driver.get("https://greengnome.github.io/panels");
         loginKapelovichPage.waitForLoginPageIsLoaded();
