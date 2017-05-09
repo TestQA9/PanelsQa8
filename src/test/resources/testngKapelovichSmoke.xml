@@ -9,7 +9,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.telran.LearningTest.CompaniesAllaTest"/>
+            <class name="com.telran.LoginKapelovichTest"/>
         </classes>
     </test>
 </suite>
