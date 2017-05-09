@@ -1,6 +1,7 @@
 package com.telran;
 
 import com.telran.pages.Learning.*;
+import com.telran.pages.LoginIakovV2Page;
 import com.telran.pages.LoginTonyPage;
 import com.telran.util.PropertyLoader;
 import org.openqa.selenium.Capabilities;
@@ -26,8 +27,9 @@ public class TestNgTestBase {
   public CompaniesPaulaPage companiesPaulaPage;
   public LoginAnnaPage loginPage;
   public CompaniesAnna companiesAnna;
-  protected WebDriver driver;
+  public LoginIakovV2Page loginIakovV2Page;
   public LoginTonyPage loginTonyPage;
+  protected WebDriver driver;
 
   @BeforeSuite(alwaysRun = true)
   public void initTestSuite() throws IOException {
@@ -48,7 +50,7 @@ public class TestNgTestBase {
     companiesPaulaPage = PageFactory.initElements(driver, CompaniesPaulaPage.class);
     loginPage = PageFactory.initElements(driver, LoginAnnaPage.class);
     companiesAnna = PageFactory.initElements(driver, CompaniesAnna.class);
-
+    loginIakovV2Page = PageFactory.initElements(driver, LoginIakovV2Page.class);
     loginTonyPage = PageFactory.initElements(driver, LoginTonyPage.class);
   }
 
