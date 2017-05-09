@@ -50,8 +50,6 @@ public class TestNgTestBase {
     companiesPaulaPage = PageFactory.initElements(driver, CompaniesPaulaPage.class);
     loginPage = PageFactory.initElements(driver, LoginAnnaPage.class);
     companiesAnna = PageFactory.initElements(driver, CompaniesAnna.class);
-    loginIakovV2Page = PageFactory.initElements(driver, LoginIakovV2Page.class);
-    loginTonyPage = PageFactory.initElements(driver, LoginTonyPage.class);
   }
 
   @AfterSuite(alwaysRun = true)
