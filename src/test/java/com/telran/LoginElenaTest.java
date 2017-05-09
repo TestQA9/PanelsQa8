@@ -17,7 +17,7 @@ public class LoginElenaTest extends TestNgTestBase {
 
     }
 
-    @Test
+    @Test(groups = {"smoke"})
 
     public void negativeLoginTest() {
         driver.get("https://greengnome.github.io/panels");
@@ -29,5 +29,16 @@ public class LoginElenaTest extends TestNgTestBase {
         Assert.assertTrue(elenaPage.isOnLoginPage(), "We are not on login page");
     }
 
+    @Test(groups = {"smoke", "inProgress"})
+    public void positiveLoginTest() {
+        driver.get("https://greengnome.github.io/panels");
+        elenaPage.waitLoginPagetoload();
+        elenaPage.filLoginField("admin");
+        elenaPage.filPasswordField("12345");
+        elenaPage.clickbutton();
+        elenaPage.waitPanelsToLoad();
 
+        Assert.assertTrue(elenaPage.isOnPanelsPage(), "We aren't on Panels page");
+
+    }
 }

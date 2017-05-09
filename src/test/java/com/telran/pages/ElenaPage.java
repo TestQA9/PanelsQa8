@@ -24,6 +24,9 @@ public class ElenaPage extends Page {
     @FindBy(id = "button")
     WebElement submitButton;
 
+    @FindBy(tagName = "b")
+    WebElement panelsPage;
+
 
     public ElenaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
@@ -53,10 +56,18 @@ public class ElenaPage extends Page {
         waitUntilIsLoaded(submitButton);
     }
 
+    public void waitPanelsToLoad() {
+        waitUntilIsLoaded(panelsPage);
+    }
+
     //verifcations
 
     public boolean isOnLoginPage() {
         return exists(submitButton);
+    }
+
+    public boolean isOnPanelsPage() {
+        return exists(panelsPage);
     }
 
 }
