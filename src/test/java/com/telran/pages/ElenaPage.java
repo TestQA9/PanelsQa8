@@ -36,19 +36,26 @@ public class ElenaPage extends Page {
 
     //actions
     public void fillUsername(String text) {
-        setElementText(loginField, text);
+        Log.info("Fill username with " + text);
+        setElementText(loginField, text)
+        ;
     }
 
-    public void filLoginField(String logintext) {
-        setElementText(loginField, logintext);
+    public void filLoginField(String text) {
+        Log.info("Fill username with " + text);
+        setElementText(loginField, text)
+        ;
     }
 
     public void clickbutton() {
+        Log.info("Click to login");
         clickElement(submitButton);
     }
 
-    public void filPasswordField(String logintext) {
-        setElementText(passField, logintext);
+    public void filPasswordField(String text) {
+        Log.info("Fill password with " + text);
+        setElementText(passField, text)
+        ;
     }
 
     //vaits
