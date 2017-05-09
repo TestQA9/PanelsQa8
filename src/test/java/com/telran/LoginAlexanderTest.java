@@ -32,7 +32,7 @@ public class LoginAlexanderTest extends TestNgTestBase {
     public void positiveLoginTest(){
         driver.get("https://greengnome.github.io/panels");
         loginAlexanderPage.waitLoginPageLoaded();
-        loginAlexanderPage.fillUserName(" ");
+        loginAlexanderPage.fillUserName("");
         loginAlexanderPage.fillPassword(" ");
         loginAlexanderPage.preesLoginButton();
         loginAlexanderPage.waitLoginPageLoaded();
