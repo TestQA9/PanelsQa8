@@ -17,7 +17,7 @@ public class LoginLijulaTest extends TestNgTestBase {
         loginLijulaPage = PageFactory.initElements(driver, LoginLijulaPage.class);
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void negativeLoginTest1() {
         driver.get("https://greengnome.github.io/panels");
         loginLijulaPage.waitLoginPageToLoad();
@@ -28,7 +28,7 @@ public class LoginLijulaTest extends TestNgTestBase {
         Assert.assertTrue(loginLijulaPage.isOnLoginPage(), "We are not on login page");
     }
 
-    @Test
+    @Test(groups = {"smoke", "inProgress"})
     public void negativeLoginTest2() {
         driver.get("https://greengnome.github.io/panels");
         loginLijulaPage.waitLoginPageToLoad();
@@ -39,7 +39,7 @@ public class LoginLijulaTest extends TestNgTestBase {
         Assert.assertTrue(loginLijulaPage.isOnLoginPage(), "We are not on login page");
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void negativeLoginTest3() {
         driver.get("https://greengnome.github.io/panels");
         loginLijulaPage.waitLoginPageToLoad();
@@ -50,7 +50,7 @@ public class LoginLijulaTest extends TestNgTestBase {
         Assert.assertTrue(loginLijulaPage.isOnLoginPage(), "We are not on login page");
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void positiveLoginTest() {
         driver.get("https://greengnome.github.io/panels");
         loginLijulaPage.waitLoginPageToLoad();
