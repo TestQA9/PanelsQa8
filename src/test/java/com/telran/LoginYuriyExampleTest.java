@@ -30,6 +30,18 @@ public class LoginYuriyExampleTest extends TestNgTestBase {
         Assert.assertTrue(loginYuriyPage.isOnLoginPage(), "We are not on a Login page");
     }
 
+    @Test(groups = {"smoke", "inProgress"})
+    public void negativeLoginTest3() {
+        driver.get("https://greengnome.github.io/panels/#/login");
+        loginYuriyPage.waitLoginPageToLoad();
+        loginYuriyPage.fillUserName("");
+        loginYuriyPage.fillPassword("");
+        loginYuriyPage.clickToLogin();
+        loginYuriyPage.waitLoginPageToLoad();
+
+        Assert.assertTrue(loginYuriyPage.isOnLoginPage(), "We are not on a Login page");
+    }
+
     @Test(groups = {"regression"})
     public void negativeLoginTest2() {
         driver.get("https://greengnome.github.io/panels/#/login");
