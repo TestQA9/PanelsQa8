@@ -1,6 +1,7 @@
 package com.telran;
 
 import com.telran.pages.LoginAlexanderPage;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -8,6 +9,7 @@ import org.testng.annotations.Test;
 
 public class LoginAlexanderTest extends TestNgTestBase {
 
+    private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
     public LoginAlexanderPage loginAlexanderPage;
 
 
@@ -36,6 +38,8 @@ public class LoginAlexanderTest extends TestNgTestBase {
         loginAlexanderPage.fillPassword(" ");
         loginAlexanderPage.preesLoginButton();
         loginAlexanderPage.waitLoginPageLoaded();
+        Log.info("");
+        Assert.assertTrue(loginAlexanderPage.isOnLoginPage(), "We Are On Login Page");
     }
 
 }

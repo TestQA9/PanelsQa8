@@ -237,7 +237,7 @@
       </build>
     </profile>
     <profile>
-      <id>iakov</id>
+      <id>alexander</id>
       <build>
         <plugins>
           <plugin>
@@ -245,7 +245,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <suiteXmlFiles>
-                <suiteXmlFile>src/test/resources/testngIakovSmoke.xml</suiteXmlFile>
+                <suiteXmlFile>src/test/resources/testngAlexanderSmoke.xml</suiteXmlFile>
               </suiteXmlFiles>
             </configuration>
           </plugin>
