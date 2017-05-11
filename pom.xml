@@ -221,7 +221,7 @@
       </build>
     </profile>
     <profile>
-      <id>kapelovich</id>
+      <id>elena</id>
       <build>
         <plugins>
           <plugin>
@@ -229,7 +229,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <suiteXmlFiles>
-                <suiteXmlFile>src/test/resources/testngKapelovichSmoke.xml</suiteXmlFile>
+                <suiteXmlFile>src/test/resources/testingElenaSmoke.xml</suiteXmlFile>
               </suiteXmlFiles>
             </configuration>
           </plugin>

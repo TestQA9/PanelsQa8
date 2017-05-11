@@ -27,6 +27,7 @@ public class TestNgTestBase {
   public CompaniesPaulaPage companiesPaulaPage;
   public LoginAnnaPage loginPage;
   public CompaniesAnna companiesAnna;
+
   public LoginIakovV2Page loginIakovV2Page;
   public LoginTonyPage loginTonyPage;
   protected WebDriver driver;
