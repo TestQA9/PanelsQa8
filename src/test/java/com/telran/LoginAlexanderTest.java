@@ -26,7 +26,7 @@ public class LoginAlexanderTest extends TestNgTestBase {
         loginAlexanderPage.fillPassword(" ");
         loginAlexanderPage.preesLoginButton();
         loginAlexanderPage.waitLoginPageLoaded();
-
+        Log.info("Checks That On Logged In Page");
         Assert.assertTrue(loginAlexanderPage.isOnLoginPage(),"We Are Not On Login Page");
     }
 
@@ -34,11 +34,11 @@ public class LoginAlexanderTest extends TestNgTestBase {
     public void positiveLoginTest(){
         driver.get("https://greengnome.github.io/panels");
         loginAlexanderPage.waitLoginPageLoaded();
-        loginAlexanderPage.fillUserName("");
-        loginAlexanderPage.fillPassword(" ");
+        loginAlexanderPage.fillUserName("admin");
+        loginAlexanderPage.fillPassword("12345");
         loginAlexanderPage.preesLoginButton();
         loginAlexanderPage.waitLoginPageLoaded();
-        Log.info("");
+        Log.info("Checks That On Logged In Page");
         Assert.assertTrue(loginAlexanderPage.isOnLoginPage(), "We Are On Login Page");
     }
 

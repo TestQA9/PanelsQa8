@@ -6,15 +6,14 @@ import org.testng.annotations.Test;
 
 public class LoginRaisaTest extends TestNgTestBase {
 
-    //  public LoginRaisaPage loginRaisaPage;
+    private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
 
 
     /*  @BeforeMethod
     public void initPageObjects() {
         loginRaisaPage = PageFactory.initElements(driver, LoginRaisaPage.class);
     }*/
-
-    private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
+    public LoginRaisaPage loginRaisaPage;
 
     @Test(groups = {"smoke"})
     public void negativeLoginTest() {
