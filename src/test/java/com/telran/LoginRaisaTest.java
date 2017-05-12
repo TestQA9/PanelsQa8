@@ -1,5 +1,6 @@
 package com.telran;
 
+import com.telran.pages.LoginRaisaPage;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
