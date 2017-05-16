@@ -10,13 +10,14 @@ public class LoginVikaTest extends TestNgTestBase {
 
     public LoginVikaPage loginVikaPage;
 
-    @Test
+
     @BeforeMethod
     public void initPageObjects() {
         loginVikaPage = PageFactory.initElements(driver, LoginVikaPage.class);
 
     }
 
+    @Test(groups = {"smoke"})
     public void negativeLoginTest() {
         driver.get("https://greengnome.github.io/panels/");
         loginVikaPage.vaitLoginPagetoload();
