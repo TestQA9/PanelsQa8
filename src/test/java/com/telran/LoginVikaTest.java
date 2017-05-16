@@ -28,4 +28,14 @@ public class LoginVikaTest extends TestNgTestBase {
         Assert.assertTrue(loginVikaPage.IsOnLoginPage(), "We are not on login page");
     }
 
+    public void positiveLoginTest() {
+        driver.get("https://greengnome.github.io/panels");
+        loginTonyPage.waitLoginPageToLoad();
+        loginTonyPage.fillLoginField("admin");
+        loginTonyPage.fillPasswordField("12345");
+        loginTonyPage.clickButton();
+        loginTonyPage.waitMainPageIsLoad();
+        Assert.assertTrue(loginTonyPage.isOnManePage(), "Not on the Main Menu Page");
+    }
+
 }
