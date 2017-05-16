@@ -29,6 +29,7 @@ public class LoginVikaTest extends TestNgTestBase {
         Assert.assertTrue(loginVikaPage.IsOnLoginPage(), "We are not on login page");
     }
 
+    @Test(groups = {"regression"})
     public void positiveLoginTest() {
         driver.get("https://greengnome.github.io/panels");
         loginTonyPage.waitLoginPageToLoad();
