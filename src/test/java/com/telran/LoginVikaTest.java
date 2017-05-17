@@ -32,12 +32,12 @@ public class LoginVikaTest extends TestNgTestBase {
     @Test(groups = {"inProgress"})
     public void positiveLoginTest() {
         driver.get("https://greengnome.github.io/panels");
-        loginTonyPage.waitLoginPageToLoad();
-        loginTonyPage.fillLoginField("admin");
-        loginTonyPage.fillPasswordField("12345");
-        loginTonyPage.clickButton();
-        loginTonyPage.waitMainPageIsLoad();
-        Assert.assertTrue(loginTonyPage.isOnManePage(), "Not on the Main Menu Page");
+        loginVikaPage.vaitLoginPagetoload();
+        loginVikaPage.fillUsename("admin");
+        loginVikaPage.fillPassword("12345");
+        loginVikaPage.ClicktoLogin();
+        loginVikaPage.vaitLoginPagetoload();
+        //   Assert.assertTrue(loginVikaPage."Not on the Main Menu Page");
     }
 
 }

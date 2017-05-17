@@ -22,27 +22,43 @@ public class LoginVikaPage extends Page {
     @FindBy(id = "button")
     WebElement submitButton;
 
+
+    @FindBy(id = "quit")
+    WebElement ButtonQuit;
+
+
+
+
     public LoginVikaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
 
     }
 
+    //actions
     public void fillUsename(String text) {
+        Log.info("Fill username wish" + text);
         setElementText(loginField, text);
     }
 
     public void fillPassword(String text) {
+        Log.info("Fill password wish" + text);
         setElementText(passwordField, text);
     }
 
     public void ClicktoLogin() {
+        Log.info("Click to login");
         clickElement(submitButton);
     }
 
     public void vaitLoginPagetoload() {
+        Log.info("Vait login page to load");
         waitUntilIsLoaded(submitButton);
     }
+    // public void waitCompaniesPageToLoad(){waitUntilIsLoaded(logoutButton);}
+    // public boolean isOnCompanyPage() {
+    //   return exists(ButtonQuit);
+    //}
 
     public boolean IsOnLoginPage() {
         return exists(submitButton);
