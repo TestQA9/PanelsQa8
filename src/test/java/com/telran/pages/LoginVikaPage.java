@@ -10,69 +10,58 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Sample page
  */
-public class ElenaPage extends Page {
+public class LoginVikaPage extends Page {
     private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
-
 
     @FindBy(id = "login")
     WebElement loginField;
 
     @FindBy(id = "pass")
-    WebElement passField;
-
+    WebElement passwordField;
 
     @FindBy(id = "button")
     WebElement submitButton;
 
-    @FindBy(tagName = "b")
-    WebElement panelsPage;
+
+    @FindBy(id = "quit")
+    WebElement ButtonQuit;
 
 
-    public ElenaPage(WebDriver driver) {
+
+
+    public LoginVikaPage(WebDriver driver) {
         super(driver);//наследуем от супер-класса
         PageFactory.initElements(driver, this);
 
     }
 
     //actions
-    public void fillUsername(String text) {
-        Log.info("Fill Username With " + text);
+    public void fillUsename(String text) {
+        Log.info("Fill username wish" + text);
         setElementText(loginField, text);
     }
 
-    public void filLoginField(String text) {
-        Log.info("Fill Login With " + text);
-        setElementText(loginField, text);
+    public void fillPassword(String text) {
+        Log.info("Fill password wish" + text);
+        setElementText(passwordField, text);
     }
 
-    public void clickbutton() {
+    public void ClicktoLogin() {
         Log.info("Click to login");
         clickElement(submitButton);
     }
 
-    public void filPasswordField(String text) {
-        Log.info("Fill password with " + text);
-        setElementText(passField, text)
-        ;
-    }
-
-    //vaits
-    public void waitLoginPagetoload() {
+    public void vaitLoginPagetoload() {
+        Log.info("Vait login page to load");
         waitUntilIsLoaded(submitButton);
     }
+    // public void waitCompaniesPageToLoad(){waitUntilIsLoaded(logoutButton);}
+    // public boolean isOnCompanyPage() {
+    //   return exists(ButtonQuit);
+    //}
 
-    public void waitPanelsToLoad() {
-        waitUntilIsLoaded(panelsPage);
-    }
-
-    //verifcations
-
-    public boolean isOnLoginPage() {
+    public boolean IsOnLoginPage() {
         return exists(submitButton);
-    }
-
-    public boolean isOnPanelsPage() {
-        return exists(panelsPage);
     }
 
 }

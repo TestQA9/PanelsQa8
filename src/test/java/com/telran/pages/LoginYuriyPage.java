@@ -30,20 +30,28 @@ public class LoginYuriyPage extends Page {
 
     //actions
     public void fillUserName(String text) {
+
+        Log.info("Fill username with " + text);
         setElementText(loginField, text);
     }
 
     public void fillPassword(String text) {
+
+        Log.info("Fill password with " + text);
         setElementText(passwordField, text);
     }
 
     public void clickToLogin() {
+
+        Log.info("Click to login");
         clickElement(submitButton);
     }
 
     //waiting
 
     public void waitLoginPageToLoad() {
+
+        Log.info("Waiting for login page to load");
         waitUntilIsLoaded(submitButton);
     }
 
