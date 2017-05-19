@@ -5,10 +5,11 @@
         <groups>
             <run>
                 <include name="smoke"/>
+                <exclude name="inProgress"/>
             </run>
         </groups>
         <classes>
-            <class name="com.telran.LoginExampleTest"/>
+            <class name="com.telran.LoginVikaTest"/>
         </classes>
     </test>
 </suite>
